@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>student</title>
+  </head>
+  <script>
+      //window.onload = function(){      
+      //    document.write('<table border="1"><tr><th>name</th><th>id</th><th>password</th></tr><% for(var i=0;i<data.length;i++){ %> <tr><td><%= data[i].name %></td><td><%= data[i].id %></td><td><%= data[i].password %></td></tr><% } %></table>')
+            
+      //  }     
+        //<% for(var i=0;i<data.length;i++){ %> <td><%= data[i].name %></td><% } %>
+      </script>
+  <body> 
+    <table border="1"><tr><th>name</th><th>id</th><th>password</th></tr>
+      <% for(var i=0;i<data.length;i++){ %> 
+      <tr>
+        <td><%= data[i].name %></td>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].password %></td>
+      </tr>
+      <% } %>
+    </table>
+     
+  </body>
+</html>
+

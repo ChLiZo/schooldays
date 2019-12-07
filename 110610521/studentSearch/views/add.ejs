@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>course</title>
+</head>
+<script></script>
+
+<body>
+  <table border="1">
+    <tr>
+      <td colspan="3">課程列表</td>
+    </tr>
+    <tr>
+      <td>課程名稱</td>
+      <td colspan="2">指導老師</td>
+    </tr>
+
+    <% for(var i=0;i<data.length;i++){ %>
+    <tr>
+      <td id="<%= i %>"><%= data[i].c_name %></td>
+      <td><%= data[i].teacher %></td>
+      <td><input type="checkbox"></td>
+    </tr>
+    <% } %>
+
+  </table>
+</body>
+
+</html>
