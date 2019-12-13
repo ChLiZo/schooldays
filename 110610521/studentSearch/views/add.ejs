@@ -16,13 +16,15 @@
       <td colspan="2">指導老師</td>
     </tr>
 
+    <form action="/sub_add" method='post'>
     <% for(var i=0;i<data.length;i++){ %>
     <tr>
-      <td id="<%= i %>"><%= data[i].c_name %></td>
-      <td><%= data[i].teacher %></td>
-      <td><input type="checkbox"></td>
+      <td><%= data[i].c_name %></td>
+      <td><%= data[i].teacher %><input type="checkbox" name="name" value= '<%= data[i].c_name %>' /></td>
     </tr>
     <% } %>
+    <input type='submit' value='Submit'>
+    </form>
 
   </table>
 </body>

@@ -15,6 +15,9 @@ router.get('/',function(req,res,next){
         if(err) throw err;
         res.render('add',{data: results});
     });
+
+   
 });
+
 
 module.exports = router;

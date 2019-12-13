@@ -13,6 +13,7 @@ var add = require('./routes/add');
 var drop = require('./routes/drop');
 var mycourse = require('./routes/mycourse');
 var search = require('./routes/search');
+var sub_add = require('./routes/sub_add');
 
 
 //var login = require('./routes/login');
@@ -36,6 +37,8 @@ app.use('/add',add);
 app.use('/drop',drop);
 app.use('/mycourse',mycourse);
 app.use('/search',search);
+app.use('/sub_add',sub_add);
+//app.use(require('body-parser')());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -51,6 +54,14 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.post('/sub_add', function(req, res){
+ //console.log('Form (from querystring): ' + req.query.form);
+  //console.log('CSRF token (from hidden form field): ' + req.body._csrf);
+  console.log('Name (from visible form field): ' + req.body.name);
+  //console.log('Email (from visible form field): ' + req.body.email);
+  res.redirect(303, '/thankyou');
 });
 
 module.exports = app;
