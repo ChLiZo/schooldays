@@ -11,9 +11,18 @@ router.post('/', function (req, res, next) {
     for (var i = 0; i < ll.length; i++) {
         pool.query("select c_id from course where c_name=?", [ll[i]], function (err, result) {  //根據帳號讀取資料
             if (err) throw err;
-            pool.query('insert into choose(id,c_id) values(?,?)', [req.session.username, result[0].c_id], function (err, results) {  //根據帳號讀取資料
+            pool.query('select * from choose where id = ? AND c_id = ?', [req.session.username, result[0].c_id], function (err, search) {
                 if (err) throw err;
+                if (!search.length) {
+                    pool.query('insert into choose(id,c_id) values(?,?)', [req.session.username, result[0].c_id], function (err, results) {  //根據帳號讀取資料
+                        if (err) throw err;
+                    })
+                }
+                else {
+                    return;
+                }
             })
+
         })
     }
     res.render('sub_add', {

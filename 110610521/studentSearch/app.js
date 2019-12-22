@@ -14,6 +14,7 @@ var drop = require('./routes/drop');
 var mycourse = require('./routes/mycourse');
 var search = require('./routes/search');
 var sub_add = require('./routes/sub_add');
+var sub_drop = require('./routes/sub_drop');
 
 
 //var login = require('./routes/login');
@@ -38,6 +39,7 @@ app.use('/drop',drop);
 app.use('/mycourse',mycourse);
 app.use('/search',search);
 app.use('/sub_add',sub_add);
+app.use('/sub_drop',sub_drop);
 //app.use(require('body-parser')());
 
 // catch 404 and forward to error handler

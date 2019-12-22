@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>course</title>
-  </head>
-  <script></script>
-  <body> 
-        dropppppppppppppp
-  </body>
+
+<head>
+  <title>course</title>
+</head>
+<script></script>
+
+<body>
+  <table border="1">
+    <tr>
+      <td colspan="3">課程列表</td>
+    </tr>
+    <tr>
+      <td>課程名稱</td>
+      <td colspan="2">指導老師</td>
+    </tr>
+
+    <form action="/sub_drop" method='post'>
+    <% for(var i=0;i<data.length;i++){ %>
+    <tr>
+      <td><%= data[i].c_name %></td>
+      <td><%= data[i].teacher %><input type="checkbox" name="name" value= '<%= data[i].c_name %>' /></td>
+    </tr>
+    <% } %>
+    <input type='submit' value='Submit'>
+    </form>
+
+  </table>
+</body>
+
 </html>
