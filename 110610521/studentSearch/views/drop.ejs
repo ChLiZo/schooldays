@@ -4,7 +4,18 @@
 <head>
   <title>course</title>
 </head>
-<script></script>
+<script>
+  function check(){
+    var cObj=document.getElementsByName('name');
+    for(var i=0;i<cObj.length;i++){
+      if(cObj[i].checked){
+        return true; 
+      }
+    }
+    alert ('請勾選至少一項');
+    return false;
+  }  
+</script>
 
 <body>
   <table border="1">
@@ -16,7 +27,7 @@
       <td colspan="2">指導老師</td>
     </tr>
 
-    <form action="/sub_drop" method='post'>
+    <form name="form1" action="/sub_drop" method='post' onsubmit="return check()">
     <% for(var i=0;i<data.length;i++){ %>
     <tr>
       <td><%= data[i].c_name %></td>
